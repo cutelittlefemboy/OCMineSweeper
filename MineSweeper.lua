@@ -90,8 +90,8 @@ function eventHandler.touch(PlayGrid, screenAddress, x, y, button, playerName)
         revealCell(clickWithOffset.x, clickWithOffset.y, PlayGrid)
         local nextReveal = {x = clickWithOffset.x, y = clickWithOffset.y}
         while hasItem(PlayGrid.revealedGrid, "t") do
-            for i = 0, PlayGrid.playFieldSize.y do
-                for j = 0, PlayGrid.playFieldSize.x do
+            for i = 0, PlayGrid.playFieldSize.y - 1 do
+                for j = 0, PlayGrid.playFieldSize.x - 1 do
                     if PlayGrid.revealedGrid[i][j] == "t" then
                         nextReveal.x, nextReveal.y = j, i
                         revealCell(j, i, PlayGrid)
